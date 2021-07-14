@@ -10,7 +10,7 @@ public class StickClickEvent : MonoBehaviour
     bool IsTiming=false;
     void Start()
     {
-        //InvokeRepeating("watermovingset",5,5);
+        InvokeRepeating("watermovingset",5,5);
     }
 
     void Update()
@@ -41,7 +41,6 @@ public class StickClickEvent : MonoBehaviour
         FindObjectOfType<WaterAnimTrigger>().setMoving();
 
         yield return new WaitForSeconds(2.5f);
-        Debug.Log("타이밍 끝");
         IsTiming=false;
         if(FindObjectOfType<WaterAnimTrigger>()==true){
             FindObjectOfType<WaterAnimTrigger>().cancelMoving();

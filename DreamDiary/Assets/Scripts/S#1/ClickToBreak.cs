@@ -53,7 +53,7 @@ public class ClickToBreak : MonoBehaviour
                     currentTime=0;
                     IsCourtine=false;
                     IsWait=true;
-                    yield return new WaitForSeconds(1);
+                    yield return new WaitForSeconds(0.5f);
                     IsWait=false;
                     yield break; //코루틴을 종료
                 }

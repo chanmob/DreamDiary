@@ -31,9 +31,15 @@ public class PanAnimTrigger : MonoBehaviour
     }
     IEnumerator breakCoroutine(){
         animator.SetBool("IsBreak",true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.5f);
         animator.SetBool("IsBreak",false);
-        FindObjectOfType<ChickenMoving>().IsStart=true;
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<S2InGameManager>().showchicken();
+    }
+
+    public void panonfire(){
+        animator.SetBool("IsFire",true);
+        FindObjectOfType<S2InGameManager>().endpuzzle();
     }
 
 

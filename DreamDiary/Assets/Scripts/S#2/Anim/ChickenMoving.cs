@@ -13,6 +13,7 @@ public class ChickenMoving : MonoBehaviour
     public bool IsStart=false;
     public bool IsGoal=false;
     public bool IsStop=false;
+    public int direction=0; //방향 전환을 한번만 하기 위한 변수
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class ChickenMoving : MonoBehaviour
 
     void Update()
     {
-        if(!IsStart&&!IsStop){
+        if(IsStart&&!IsStop){
             if(!IsGoal){
                 rotation();
                 movingmotion();
@@ -37,7 +38,6 @@ public class ChickenMoving : MonoBehaviour
             cv=Vector2.MoveTowards(cv,rv,movingspeed);
             if(!(isinside(cv.x,cv.y))){
                 setnewpoint();
-                Debug.Log("("+cv.x+","+cv.y+") 원의 외부");
             }
             else this.transform.position=cv;
         }else { //원하는 위치에 도달했거나, 원의 범위에 들어가려고 하는 경우
@@ -49,17 +49,15 @@ public class ChickenMoving : MonoBehaviour
             cv=Vector2.MoveTowards(cv,rv,movingspeed);
             if((isinside(cv.x,cv.y))){
                 setnewpoint();
-                Debug.Log("("+cv.x+","+cv.y+") 원의 내부");
             }
             else this.transform.position=cv;
         }else { //원하는 위치에 도달했거나, 원의 범위에 들어가려고 하는 경우
             setnewpoint(); //새로운 위치 설정
         }
     }
-    public void endmoving(){
+    public void endmoving(){ //닭을 옮긴 후 실행하는 함수
         IsStop=false;
         if(isinside(transform.position.x,transform.position.y)){
-            Debug.Log("닭 집어넣기 성공");
             IsGoal=true;
             FindObjectOfType<S2InGameManager>().addchic();
             this.GetComponent<ChickenCatch>().enabled=false;
@@ -67,8 +65,8 @@ public class ChickenMoving : MonoBehaviour
         setnewpoint();
     }
     void setnewpoint(){ //새로운 랜덤 위치를 찾는 함수
-        rx=Random.Range(-4.5f,12.0f); //랜덤의 x,y값 추출
-        ry=Random.Range(-1.0f,7.0f);
+        rx=Random.Range(-8.0f,8.0f); //랜덤의 x,y값 추출
+        ry=Random.Range(-4.0f,4.0f);
 
         x=transform.position.x; //현재 닭의 x,y값 추출
         y=transform.position.y;
@@ -78,20 +76,20 @@ public class ChickenMoving : MonoBehaviour
     }
 
     bool isinside(float x,float y){ //팬 내부에 있는지 알려주는 함수
-        if(Mathf.Pow(x-5,2)+Mathf.Pow(y+1,2)<=42){ //원의 방정식 내부
-            //Debug.Log("("+x+","+y+") 원의 내부");
+        if(Mathf.Pow(x-1,2)+Mathf.Pow(y+5,2)<=49){ //원의 방정식 내부
             return true;
         }else{
-            //Debug.Log("("+x+","+y+") 원의 외부");
             return false;
         }
     }
 
     void rotation(){
-        if(rv.x>=cv.x){ //오른쪽
-            //this.GetComponent<Animator>().SetInteger("direction",1);
-        }else{ //왼쪽
-            //this.GetComponent<Animator>().SetInteger("direction",-1);
+        if(rv.x>cv.x-0.1f&&direction<=0){ //오른쪽
+            direction=1;
+            this.GetComponent<Animator>().SetInteger("direction",1);
+        }else if(rv.x<cv.x+0.1f&&direction>=0){ //왼쪽
+            direction=-1;
+            this.GetComponent<Animator>().SetInteger("direction",-1);
         }
     }
 

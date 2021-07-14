@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19625734}
   - component: {fileID: 19625735}
+  - component: {fileID: 19625736}
   m_Layer: 0
   m_Name: InGameManager
   m_TagString: Untagged
@@ -148,10 +149,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19625733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -683.487, y: -357.198, z: 390.56354}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 635565959}
+  m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &19625735
@@ -171,6 +172,19 @@ MonoBehaviour:
   arrow: {fileID: 1253782853}
   throwit: {fileID: 1717119001}
   isstart: 0
+--- !u!114 &19625736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19625733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8415f0e362f00f42a434347866f01a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Scene2
 --- !u!1 &109117707
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,51 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f0e0a211098ac43aa2f512f94248a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeTime: 3
---- !u!1 &333378442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 333378443}
-  - component: {fileID: 333378444}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &333378443
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333378442}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 635565959}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &333378444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333378442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8415f0e362f00f42a434347866f01a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Scene1
+  FadeTime: 2
 --- !u!1 &412735921
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,38 +627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88c31c6ed79d6447af3acac07bf8764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &635565958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 635565959}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &635565959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635565958}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 683.487, y: 357.198, z: -390.56354}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 333378443}
-  - {fileID: 19625734}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &640122417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashcan: {fileID: 1883771549}
   cat: {fileID: 556289512}
-  throwspeed: 0.01
+  throwspeed: 0.02
 --- !u!212 &1312292054
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1368,4 +1306,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingamemanager: {fileID: 19625735}
-  movingspeed: 0.005
+  movingspeed: 0.01

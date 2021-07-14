@@ -41,7 +41,8 @@ public class InGameManager : MonoBehaviour
 
     IEnumerator endflow(){
         successpanel.GetComponent<FadeInOut>().fadeout_func();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
+        this.GetComponent<ChangeScene>().nextScene();
     }
     
 }

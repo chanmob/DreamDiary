@@ -43,7 +43,6 @@ public class TrashAnimTrigger : MonoBehaviour
         }else {
             IsThrow=false;
             if(!IsGoal){
-                Debug.Log("골인");
                 IsGoal=true;
                 this.GetComponent<SpriteRenderer>().enabled=false;
                 FindObjectOfType<ClickToBreak>().finishthrow();
@@ -63,7 +62,7 @@ public class TrashAnimTrigger : MonoBehaviour
 
     void failtrash(){
         if(gv.x-cv.x>0.1f||gv.y-cv.y>0.1f){
-            cv=Vector3.Slerp(cv,gv,throwspeed); 
+            cv=Vector3.Slerp(cv,gv,throwspeed+0.02f); 
             this.transform.position=new Vector2(cv.x,cv.y);
         }else{
             IsFail=false;

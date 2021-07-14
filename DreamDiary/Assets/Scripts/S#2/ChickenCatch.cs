@@ -21,8 +21,7 @@ public class ChickenCatch : MonoBehaviour
         }
         if(IsMove&&Input.GetMouseButton(0)){
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("마우스 위치 "+mousePos);
-            this.transform.position=new Vector2(mousePos.x+4,mousePos.y+3);
+            this.transform.position=new Vector2(mousePos.x,mousePos.y);
         }
         if(IsMove&&Input.GetMouseButtonUp(0)){
             IsMove=false;
