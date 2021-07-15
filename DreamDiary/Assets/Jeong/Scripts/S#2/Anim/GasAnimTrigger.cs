@@ -28,6 +28,7 @@ public class GasAnimTrigger : MonoBehaviour
         IsOn=true;
         animator.SetBool("IsOn",true);
         yield return new WaitForSeconds(1);
+        this.GetComponent<SETrigger>().SEtriggerfunc(0);
         FindObjectOfType<PanAnimTrigger>().panonfire();
     }
 

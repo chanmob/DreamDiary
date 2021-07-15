@@ -8,7 +8,7 @@ public class FadeInOut : MonoBehaviour
 {
     public float FadeTime = 2f;
     Image fadeImg;
-     float start;
+    float start;
     float end;
     float time = 0f;
     bool isPlaying = false;

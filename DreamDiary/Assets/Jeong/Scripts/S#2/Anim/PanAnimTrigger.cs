@@ -30,6 +30,7 @@ public class PanAnimTrigger : MonoBehaviour
         StartCoroutine(breakCoroutine());
     }
     IEnumerator breakCoroutine(){
+        this.GetComponent<SETrigger>().SEtriggerfunc(0);
         animator.SetBool("IsBreak",true);
         yield return new WaitForSeconds(2.5f);
         animator.SetBool("IsBreak",false);

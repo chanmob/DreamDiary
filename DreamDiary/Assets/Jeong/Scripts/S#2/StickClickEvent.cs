@@ -18,6 +18,7 @@ public class StickClickEvent : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){  
             if(!IsFishing){
                 IsFishing=true;
+                this.GetComponent<SETrigger>().SEtriggerfunc(0);
                 if(IsTiming){ //타이밍 맞춰서 클릭한 경우
                     stopFishing();
                     FindObjectOfType<StickAnimTrigger>().eggfish();
@@ -38,6 +39,7 @@ public class StickClickEvent : MonoBehaviour
     }
     IEnumerator waterMovingTiming(){
         IsTiming=true;
+        this.GetComponent<SETrigger>().SEtriggerfunc(1);
         FindObjectOfType<WaterAnimTrigger>().setMoving();
 
         yield return new WaitForSeconds(2.5f);

@@ -41,7 +41,9 @@ public class InGameManager : MonoBehaviour
 
     IEnumerator endflow(){
         successpanel.GetComponent<FadeInOut>().fadeout_func();
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
+        this.GetComponent<SETrigger>().SEtriggerfunc(0); //효과음 실행
+        yield return new WaitForSeconds(3);
         this.GetComponent<ChangeScene>().nextScene();
     }
     

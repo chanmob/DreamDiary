@@ -25,12 +25,15 @@ public class ClickToBreak : MonoBehaviour
                     
                     if(broken<=6){
                         if(!IsWait){
-                            IsClicked=true;
                             if(!IsCourtine) StartCoroutine(checktriple());
+                            else {
+                                IsClicked=true;
+                            }
                         }
                     }else { //쓰레기통을 전부 부순 후
                         if(!IsWait&&!IsThrow){ 
                         IsThrow=true; //한번만 던지도록함
+                        this.GetComponent<SETrigger>().SEtriggerfunc(4);
                         this.GetComponent<AnimTrigger>().goalanim();
                         }
                     }
@@ -42,21 +45,27 @@ public class ClickToBreak : MonoBehaviour
     IEnumerator checktriple(){ // 연속 3번 클릭했는지 체크하는 코루틴
         IsCourtine=true;
         currentTime=0;
+        if(stack==0)    this.GetComponent<SETrigger>().SEtriggerfunc(1);
+
         while(currentTime<maxTime){
             currentTime+=Time.deltaTime;
             yield return null;
             if(IsClicked) { //연속 클릭한 경우
+                Debug.Log("stack : "+stack);
                 stack++; //스택 증가
                 if(stack>=2){ //연속 3회 이상 클릭함
+                    this.GetComponent<SETrigger>().SEtriggerfunc(3);
                     getBroken(); //함수 실행
                     stack=0; //다른 값 초기화
                     currentTime=0;
                     IsCourtine=false;
                     IsWait=true;
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.1f);
                     IsWait=false;
+                    IsClicked=false;
                     yield break; //코루틴을 종료
                 }
+                this.GetComponent<SETrigger>().SEtriggerfunc(2);
                 currentTime=0;
                 new WaitForSeconds(0.1f);
                 yield return StartCoroutine(checktriple()); //한번 더 코루틴을 실행함
@@ -70,6 +79,7 @@ public class ClickToBreak : MonoBehaviour
         }
         stack=0;
         IsCourtine=false;
+        IsClicked=false;
         yield break;
     }
 
@@ -77,6 +87,7 @@ public class ClickToBreak : MonoBehaviour
         broken++;
         if(broken<=6){
             this.GetComponent<AnimTrigger>().brokeanim(broken);
+            this.GetComponent<SETrigger>().SEtriggerfunc(0);
         }else{
             this.GetComponent<AnimTrigger>().stopmoving();
             StartCoroutine(stopTrashcan());

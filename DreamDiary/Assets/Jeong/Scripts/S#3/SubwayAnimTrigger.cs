@@ -8,7 +8,6 @@ public class SubwayAnimTrigger : MonoBehaviour
     Vector2 startposition;
     Vector2 finishposition;
     public float distance; //드래그 인정할 범위
-    int length=0;
     Animator animator;
 
     void Start()
@@ -36,11 +35,8 @@ public class SubwayAnimTrigger : MonoBehaviour
     }
 
     void getlonger(){
-        length++;
-        animator.SetInteger("Length",length);
-        if(length>=4){
-            IsTime=false;
-            FindObjectOfType<S3InGameManager>().endpuzzle();
-        }
+        animator.SetBool("IsLonger",true);
+        FindObjectOfType<S3InGameManager>().endpuzzle();
+        this.GetComponent<SubwayAnimTrigger>().enabled=false;
     }
 }
