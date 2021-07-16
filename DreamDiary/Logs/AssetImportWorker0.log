@@ -820,3 +820,132 @@ System memory in use after: 44.8 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1932.
 Total: 2.209400 ms (FindLiveObjects: 0.203800 ms CreateObjectMapping: 0.035600 ms MarkObjects: 1.902900 ms  DeleteObjects: 0.065300 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 881.367217 seconds.
+  path: Assets/Jeong/SE/S#1/1_crumple_metal1.wav
+  artifactKey: Guid(55a3b877357667e46900c435260725dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_crumple_metal1.wav using Guid(55a3b877357667e46900c435260725dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '486aecd0c5ecfef5e014405018365a88') in 0.050847 seconds
+  Import took 0.054286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000438 seconds.
+  path: Assets/Jeong/SE/S#1/1_crumple_metal2.wav
+  artifactKey: Guid(5d0dc002d61283a4596a5ba273593a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_crumple_metal2.wav using Guid(5d0dc002d61283a4596a5ba273593a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47be41ecc6ed8591ad5a0fed40ceabf1') in 0.019652 seconds
+  Import took 0.022924 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Jeong/SE/S#1/1_throw_trash.wav
+  artifactKey: Guid(2450b46b19be2bb4bb5ae0063c28ff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_throw_trash.wav using Guid(2450b46b19be2bb4bb5ae0063c28ff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '255bbaa0eb303693755c2f57edbbd6af') in 0.017052 seconds
+  Import took 0.020316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000554 seconds.
+  path: Assets/Jeong/SE/S#1/1_hit_trashcan (1).wav
+  artifactKey: Guid(da9b337f5bdd94441bd7a10f0fd1bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_hit_trashcan (1).wav using Guid(da9b337f5bdd94441bd7a10f0fd1bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d98a3124d7c7633e2817651b745b040') in 0.016467 seconds
+  Import took 0.019410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Jeong/SE/S#1/1_hit_trashcan.wav
+  artifactKey: Guid(d6a107a563715144ab4024be6fec6c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_hit_trashcan.wav using Guid(d6a107a563715144ab4024be6fec6c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f687e302bfc283fcf23316b038c8498') in 0.015442 seconds
+  Import took 0.018355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000413 seconds.
+  path: Assets/Jeong/SE/S#1/1_hit_trashcan (2).wav
+  artifactKey: Guid(5aca5a05c9089704b960f54eeab1db85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_hit_trashcan (2).wav using Guid(5aca5a05c9089704b960f54eeab1db85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3769747de1b44c7a922be2044ccef927') in 0.015694 seconds
+  Import took 0.018921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Jeong/SE/S#1/1_crumple_metal3.wav
+  artifactKey: Guid(e604f5fad9f3ae14f827d08992877bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jeong/SE/S#1/1_crumple_metal3.wav using Guid(e604f5fad9f3ae14f827d08992877bc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63de9cb8e37a5d30903bbde4cfce8a1a') in 0.016843 seconds
+  Import took 0.019518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.010495 seconds.
+  path: Assets/Chan/Scene/Level8.unity
+  artifactKey: Guid(c8c2663b279166f459690c3398fb2d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chan/Scene/Level8.unity using Guid(c8c2663b279166f459690c3398fb2d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8801e84178a81ae0d439bddf8936733') in 0.004619 seconds
+  Import took 0.007488 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004938 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.036 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1416 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.6 MB.
+System memory in use after: 72.6 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1936.
+Total: 2.054700 ms (FindLiveObjects: 0.187400 ms CreateObjectMapping: 0.034100 ms MarkObjects: 1.772500 ms  DeleteObjects: 0.058800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.684567 seconds.
+  path: Assets/Chan/Animation/Level8/Fish1.anim
+  artifactKey: Guid(c1b40db9e1d33004cadbb82b3c855329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chan/Animation/Level8/Fish1.anim using Guid(c1b40db9e1d33004cadbb82b3c855329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a49d5c854fcf1d63b1bbad75a8cb387c') in 0.024562 seconds
+  Import took 0.027287 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017001 seconds.
+  path: Assets/Chan/Animation/Level8/Fish1.anim
+  artifactKey: Guid(c1b40db9e1d33004cadbb82b3c855329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chan/Animation/Level8/Fish1.anim using Guid(c1b40db9e1d33004cadbb82b3c855329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a49d5c854fcf1d63b1bbad75a8cb387c') in 0.004084 seconds
+  Import took 0.007438 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004077 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.062 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1416 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.6 MB.
+System memory in use after: 72.7 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1939.
+Total: 2.171800 ms (FindLiveObjects: 0.171500 ms CreateObjectMapping: 0.034900 ms MarkObjects: 1.900300 ms  DeleteObjects: 0.064000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.506585 seconds.
+  path: Assets/Chan/Animation/Level8/Fish2.anim
+  artifactKey: Guid(75d7064f5c834dc4bb2e0ba605ebbf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chan/Animation/Level8/Fish2.anim using Guid(75d7064f5c834dc4bb2e0ba605ebbf7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf661e918bb6058382f2c3f55a89d20') in 0.021107 seconds
+  Import took 0.023884 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
