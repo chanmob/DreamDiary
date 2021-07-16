@@ -24,6 +24,7 @@ public class Level8Manager : Singleton<Level8Manager>
 
     public AudioClip eatClip;
     public AudioClip feedClip;
+    public AudioClip passClip;
 
     public void EatSound()
     {
@@ -38,6 +39,30 @@ public class Level8Manager : Singleton<Level8Manager>
     private void Start()
     {
         StartCoroutine(FadeCoroutine());
+    }
+
+    public void End()
+    {
+        StartCoroutine(FadeOutCoroutine());
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        source.clip = passClip;
+        source.Play();
+
+        fade.gameObject.SetActive(true);
+        float a = 0;
+
+        while (fade.color.a < 1)
+        {
+            a += Time.deltaTime * 0.5f;
+            fade.color = new Color(0, 0, 0, a);
+            yield return null;
+        }
+
+        fade.color = new Color(0, 0, 0, 1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level10");
     }
 
     private IEnumerator FadeCoroutine()

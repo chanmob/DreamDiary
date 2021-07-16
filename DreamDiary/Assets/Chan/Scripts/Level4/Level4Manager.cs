@@ -23,6 +23,7 @@ public class Level4Manager : Singleton<Level4Manager>
 
     public AudioClip doorclip;
     public AudioClip chaseclip;
+    public AudioClip passclip;
 
     public AudioSource source;
 
@@ -49,6 +50,27 @@ public class Level4Manager : Singleton<Level4Manager>
         StartCoroutine(StartCoroutine());
     }
 
+    private IEnumerator FadeOutCoroutine()
+    {
+        source.clip = passclip;
+        source.Play();
+
+        player.canMove = false;
+        fade.gameObject.SetActive(true);
+        float a = 0;
+
+        while (fade.color.a < 1)
+        {
+            a += Time.deltaTime * 0.5f;
+            fade.color = new Color(0, 0, 0, a);
+            yield return null;
+        }
+
+        fade.color = new Color(0, 0, 0, 1);
+        SceneManager.LoadScene("Level8");
+    }
+
+
     private IEnumerator StartCoroutine()
     {
         yield return new WaitForSeconds(2.5f);
@@ -71,12 +93,12 @@ public class Level4Manager : Singleton<Level4Manager>
 
     public void SpawnDoor(bool left)
     {
-        if(doorCount == 0)
-        {
-            source.loop = true;
-            source.clip = chaseclip;
-            source.Play();
-        }
+        //if(doorCount == 0)
+        //{
+        //    //source.loop = true;
+        //    source.clip = chaseclip;
+        //    source.Play();
+        //}
 
         idleMonster.SetActive(false);
         monster.gameObject.SetActive(false);
@@ -96,7 +118,8 @@ public class Level4Manager : Singleton<Level4Manager>
 
         if(Mathf.Abs(doorCount) >= 6)
         {
-            SceneManager.LoadScene("Level8");
+            StartCoroutine(FadeOutCoroutine());
+            //SceneManager.LoadScene("Level8");
         }
         else
         {
@@ -107,6 +130,9 @@ public class Level4Manager : Singleton<Level4Manager>
     public IEnumerator MonsterOn()
     {
         yield return new WaitForSeconds(1f);
+
+        source.clip = chaseclip;
+        source.Play();
 
         monster.gameObject.SetActive(true);
     }

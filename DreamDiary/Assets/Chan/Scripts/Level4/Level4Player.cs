@@ -55,7 +55,8 @@ public class Level4Player : MonoBehaviour
         }
         else if (collision.CompareTag("Level4Monster"))
         {
-
+            Root.instance.lv4 = true;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level8");
         }
     }
 }

@@ -1113,6 +1113,7 @@ MonoBehaviour:
   source: {fileID: 2030531326}
   eatClip: {fileID: 8300000, guid: d927b34ff2f4ddf42a2026e62d9b3d06, type: 3}
   feedClip: {fileID: 8300000, guid: 7c70ebec135a9cf448fa31b345b4e9dd, type: 3}
+  passClip: {fileID: 8300000, guid: 42e572d4e18121a4f8b8f72837ec63f0, type: 3}
 --- !u!4 &2030531325
 Transform:
   m_ObjectHideFlags: 0
@@ -1316,7 +1317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2093183527
 MonoBehaviour:
   m_ObjectHideFlags: 0

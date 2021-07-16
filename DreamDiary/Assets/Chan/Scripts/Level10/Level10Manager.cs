@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Level10Manager : MonoBehaviour
+public class Level10Manager : Singleton<Level10Manager>
 {
     public Image fade;
 
     public AudioSource source;
+    public AudioSource knockSource;
 
     public AudioClip knockClip;
     public AudioClip windowClip;
+    public AudioClip passClip;
 
     public Animator anim;
 
@@ -42,8 +44,8 @@ public class Level10Manager : MonoBehaviour
 
         yield return new WaitForSeconds(7f);
 
-        source.clip = knockClip;
-        source.Play();
+        //source.clip = knockClip;
+        knockSource.Play();
 
         yield return new WaitForSeconds(3f);
 
@@ -51,6 +53,37 @@ public class Level10Manager : MonoBehaviour
         source.Play();
 
         canStart = true;
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        source.clip = passClip;
+        source.Play();
+
+        fade.gameObject.SetActive(true);
+        float a = 0;
+
+        while (fade.color.a < 1)
+        {
+            a += Time.deltaTime * 0.5f;
+            fade.color = new Color(0, 0, 0, a);
+            yield return null;
+        }
+
+        fade.color = new Color(0, 0, 0, 1);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+    }
+
+
+    public void End()
+    {
+        isEnd = true;
+        Root.instance.lv10 = true;
+        StartCoroutine(FadeOutCoroutine());
+
+
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
     }
 
     private void Update()
@@ -67,6 +100,8 @@ public class Level10Manager : MonoBehaviour
                 if (checkTime >= 10)
                 {
                     isEnd = true;
+                    checkTime = 0;
+                    StartCoroutine(FadeOutCoroutine());
                 }
             }
 

@@ -11,7 +11,9 @@ public class Level8Fish : MonoBehaviour
     {
         if(isFinish)
         {
-            SceneManager.LoadScene("Level10");
+            Level8Manager.instance.End();
+
+            //SceneManager.LoadScene("Level10");
         }
     }
 }
