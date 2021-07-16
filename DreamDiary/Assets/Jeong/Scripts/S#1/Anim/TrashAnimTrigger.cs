@@ -12,6 +12,7 @@ public class TrashAnimTrigger : MonoBehaviour
     bool IsGoal=false;
     bool IsFail=false;
     public float throwspeed=3f;
+    float distance;
 
     void Start()
     {
@@ -55,13 +56,14 @@ public class TrashAnimTrigger : MonoBehaviour
     public void failset(){
         cv=new Vector3(-4.14f,1.3f,0);
         this.transform.position=new Vector2(cv.x,cv.y);
-        gv=new Vector3(-2.0f,10.0f,0);
+        gv=new Vector3(trashcan.transform.position.x,trashcan.transform.position.y-0.6f,0);
         this.GetComponent<SpriteRenderer>().enabled=true;
         IsFail=true;
+        distance=gv.x-cv.x+2;
     }
 
     void failtrash(){
-        if(gv.x-cv.x>0.1f||gv.y-cv.y>0.1f){
+        if(gv.x-cv.x>(distance/2)+0.1f){
             cv=Vector3.Slerp(cv,gv,throwspeed+0.02f); 
             this.transform.position=new Vector2(cv.x,cv.y);
         }else{
@@ -71,4 +73,6 @@ public class TrashAnimTrigger : MonoBehaviour
             FindObjectOfType<CatAnimTrigger>().throwhanddown();
         }
     }
+
+
 }

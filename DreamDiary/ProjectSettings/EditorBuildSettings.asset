@@ -6,15 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Jeong/Scenes/MainScene.unity
+    guid: 9bbaf55ccfdd47349b6249b429605a16
+  - enabled: 1
+    path: Assets/Jeong/Scenes/Scene1.unity
+    guid: 703564ef24dc50c40a78664defa7984c
+  - enabled: 1
+    path: Assets/Jeong/Scenes/Scene2.unity
+    guid: a7d41d7720f1cd049bf67ee6e39924db
+  - enabled: 1
+    path: Assets/Jeong/Scenes/Scene3.unity
+    guid: 5c9a11653821c5f45b27ca623c7c936f
+  - enabled: 1
     path: Assets/Chan/Scene/Level4.unity
     guid: bf5fbab6d682ee44a945029f05784b8d
+  - enabled: 1
+    path: Assets/Jeong/Scenes/TutorialScene.unity
+    guid: 3f07d7c24688bb048a04a7f3fb7c5d31
+  - enabled: 1
+    path: Assets/Chan/Scene/Ending.unity
+    guid: 1977c597e2bbde241856808c43da14a8
   - enabled: 1
     path: Assets/Chan/Scene/Level8.unity
     guid: c8c2663b279166f459690c3398fb2d61
   - enabled: 1
     path: Assets/Chan/Scene/Level10.unity
     guid: 80ce160b242319b4091a346ec0036318
-  - enabled: 1
-    path: Assets/Chan/Scene/Ending.unity
-    guid: 1977c597e2bbde241856808c43da14a8
   m_configObjects: {}
