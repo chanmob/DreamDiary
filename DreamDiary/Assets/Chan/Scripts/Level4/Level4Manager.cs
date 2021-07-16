@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level4Manager : Singleton<Level4Manager>
 {
@@ -95,7 +96,7 @@ public class Level4Manager : Singleton<Level4Manager>
 
         if(Mathf.Abs(doorCount) >= 6)
         {
-
+            SceneManager.LoadScene("Level8");
         }
         else
         {

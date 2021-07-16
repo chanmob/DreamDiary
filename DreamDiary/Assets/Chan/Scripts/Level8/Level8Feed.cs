@@ -8,6 +8,7 @@ public class Level8Feed : MonoBehaviour
 
     public void AnimationAction()
     {
+        Level8Manager.instance.EatSound();
         fish.SetActive(true);
     }
 }

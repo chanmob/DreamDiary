@@ -9,6 +9,7 @@ TagManager:
   - Level4Monster
   - Level8FishTank
   - Level8Feed
+  - Level10Window
   layers:
   - Default
   - TransparentFX

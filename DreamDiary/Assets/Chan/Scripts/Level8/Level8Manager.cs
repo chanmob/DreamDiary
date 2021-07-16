@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Level8Manager : MonoBehaviour
+public class Level8Manager : Singleton<Level8Manager>
 {
     public bool isFeed;
 
@@ -17,6 +17,23 @@ public class Level8Manager : MonoBehaviour
 
     public GameObject firstFish;
     public GameObject secondFish;
+
+    private bool isEnd = false;
+
+    public AudioSource source;
+
+    public AudioClip eatClip;
+    public AudioClip feedClip;
+
+    public void EatSound()
+    {
+        source.PlayOneShot(eatClip);
+    }
+
+    public void FeedSound()
+    {
+        source.PlayOneShot(feedClip);
+    }
 
     private void Start()
     {
@@ -38,8 +55,16 @@ public class Level8Manager : MonoBehaviour
         fade.gameObject.SetActive(false);
     }
 
+    private Vector2 offset;
+
     private void Update()
     {
+        if (isEnd)
+            return;
+
+        if (isFeed)
+            idleFeed.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+
         if (Input.GetMouseButtonDown(0))
         {
             if (!isFeed)
@@ -51,6 +76,8 @@ public class Level8Manager : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("Level8Feed"))
                     {
+                        offset = (Vector2)idleFeed.transform.position - mousePos;
+                        idleFeed.GetComponent<BoxCollider2D>().enabled = false;
                         isFeed = true;
                     }
                 }
@@ -66,6 +93,7 @@ public class Level8Manager : MonoBehaviour
                     {
                         idleFeed.gameObject.SetActive(false);
                         anim.gameObject.SetActive(true);
+                        isEnd = true;
                     }
                 }
             }

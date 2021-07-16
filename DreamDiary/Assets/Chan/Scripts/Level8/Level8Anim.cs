@@ -9,11 +9,13 @@ public class Level8Anim : MonoBehaviour
 
     public void FirstFeed()
     {
+        Level8Manager.instance.FeedSound();
         feed1.SetActive(true);
     }
 
     public void SecondFeed()
     {
+        Level8Manager.instance.FeedSound();
         feed2.SetActive(true);
     }
 
