@@ -41,7 +41,7 @@ public class Ending : MonoBehaviour
         {
             _dialogData = goodDialoge;
         }
-        else if (Root.instance.lv10 == false && Root.instance.lv4 == false) 
+        else if (Root.instance.lv10 == true && Root.instance.lv4 == true) 
         {
             _dialogData = badDialoge;
         }
