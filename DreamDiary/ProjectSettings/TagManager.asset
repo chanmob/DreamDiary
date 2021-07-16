@@ -7,6 +7,8 @@ TagManager:
   - Level4Door
   - Level4Door2
   - Level4Monster
+  - Level8FishTank
+  - Level8Feed
   layers:
   - Default
   - TransparentFX

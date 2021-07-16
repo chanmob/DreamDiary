@@ -20,10 +20,15 @@ public class Level4Manager : Singleton<Level4Manager>
 
     public int doorCount = 0;
 
+    public AudioClip doorclip;
+    public AudioClip chaseclip;
+
+    public AudioSource source;
+
     void Start()
     {
         StartCoroutine(FadeCoroutine());
-        StartCoroutine(StartCoroutine());
+        //StartCoroutine(StartCoroutine());
     }
 
     private IEnumerator FadeCoroutine()
@@ -38,11 +43,25 @@ public class Level4Manager : Singleton<Level4Manager>
         }
 
         fade.color = new Color(0, 0, 0, 0);
+        fade.gameObject.SetActive(false);
+
+        StartCoroutine(StartCoroutine());
     }
 
     private IEnumerator StartCoroutine()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
+
+        float vol = 0.3f;
+        for(int i = 0; i < 6; i++)
+        {
+            yield return new WaitForSeconds(2.5f);
+
+            source.volume = vol;
+            source.clip = doorclip;
+            source.Play();
+            vol += 0.15f;
+        }
 
         idlePlayer.SetActive(false);
         player.gameObject.SetActive(true);
@@ -51,6 +70,13 @@ public class Level4Manager : Singleton<Level4Manager>
 
     public void SpawnDoor(bool left)
     {
+        if(doorCount == 0)
+        {
+            source.loop = true;
+            source.clip = chaseclip;
+            source.Play();
+        }
+
         idleMonster.SetActive(false);
         monster.gameObject.SetActive(false);
 
@@ -58,14 +84,23 @@ public class Level4Manager : Singleton<Level4Manager>
         {
             monster.transform.position = rightDoor.transform.position;
             player.transform.position = new Vector2(rightDoor.transform.position.x - 1.5f, player.transform.position.y);
+            doorCount--;
         }
         else
         {
             monster.transform.position = leftDoor.transform.position;
             player.transform.position = new Vector2(leftDoor.transform.position.x + 1.5f, player.transform.position.y);
+            doorCount++;
         }
 
-        StartCoroutine(MonsterOn());
+        if(Mathf.Abs(doorCount) >= 6)
+        {
+
+        }
+        else
+        {
+            StartCoroutine(MonsterOn());
+        }
     }
 
     public IEnumerator MonsterOn()
