@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SkeletonUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float animTime;
+    public Animator anim;
+
+    public GameObject disappear;
+
+    private void OnEnable()
     {
-        
+        Invoke("StartAnim", animTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartAnim()
     {
-        
+        anim.SetTrigger("Up");
+    }
+
+    public void NextStep()
+    {
+        disappear.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

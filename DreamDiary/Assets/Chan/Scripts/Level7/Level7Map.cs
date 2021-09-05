@@ -32,7 +32,8 @@ public class Level7Map : MonoBehaviour
 
     private void MapClear()
     {
-
+        map.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     private bool CheckClaer()
@@ -41,8 +42,6 @@ public class Level7Map : MonoBehaviour
         {
             if (headParent.transform.GetChild(i).gameObject.activeSelf)
             {
-                Debug.Log(i);
-
                 return false;
             }
         }

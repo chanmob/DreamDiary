@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class SkeletonOff : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void End()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Level7Manager.instance.NextStage();
     }
 }

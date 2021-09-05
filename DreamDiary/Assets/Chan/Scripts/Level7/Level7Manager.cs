@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Level7Manager : MonoBehaviour
+public class Level7Manager : Singleton<Level7Manager>
 {
     public GameObject skeleton;
 
@@ -38,7 +39,7 @@ public class Level7Manager : MonoBehaviour
 
     public void NextStage()
     {
-
+        StartCoroutine(FadeOutCoroutine());
     }
 
     private IEnumerator FadeOutCoroutine()
@@ -54,6 +55,7 @@ public class Level7Manager : MonoBehaviour
         }
 
         fade.color = new Color(0, 0, 0, 1);
+        SceneManager.LoadScene(nextStageName);
     }
 
     private IEnumerator FadeCoroutine()

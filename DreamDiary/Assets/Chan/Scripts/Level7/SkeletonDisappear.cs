@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SkeletonDisappear : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject next;
+
+    public float delay;
+
+    public void Next()
     {
-        
+        Invoke("NextStep", delay);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NextStep()
     {
-        
+        next.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
