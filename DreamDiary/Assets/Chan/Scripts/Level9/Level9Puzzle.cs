@@ -6,13 +6,18 @@ public class Level9Puzzle : MonoBehaviour
 {
     public bool[] puzzleClear;
 
+    public GameObject puzzleObj;
+    public GameObject finish;
+
     public void PuzzleClear(int idx)
     {
         puzzleClear[idx] = true;
 
         if (CheckClear())
         {
-
+            puzzleObj.SetActive(false);
+            finish.SetActive(true);
+            Level9Manager.instance.Finish();
         }
     }
 

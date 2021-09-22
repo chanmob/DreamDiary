@@ -62,7 +62,7 @@ public class Level8Manager : Singleton<Level8Manager>
         }
 
         fade.color = new Color(0, 0, 0, 1);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level10");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level9");
     }
 
     private IEnumerator FadeCoroutine()
