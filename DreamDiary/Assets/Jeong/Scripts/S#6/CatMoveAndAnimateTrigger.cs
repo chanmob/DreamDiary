@@ -82,6 +82,9 @@ public class CatMoveAndAnimateTrigger : MonoBehaviour
         {
             IsMoveable = false;
             FindObjectOfType<S6InGameManager>().endpuzzle();
+        }else if (!IsMeetReaper&&collision.gameObject.name == "BarkTrigger")
+        {
+            StartCoroutine(PlayShadowBark());
         }
     }
 
@@ -118,5 +121,12 @@ public class CatMoveAndAnimateTrigger : MonoBehaviour
         animator.SetInteger("Shadows", ShadowCount);
         yield return new WaitForSeconds(0.5f);
         IsAnimating = false;
+    }
+
+    IEnumerator PlayShadowBark()
+    {
+        animator.SetBool("IsBark", true);
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("IsBark", false);
     }
 }

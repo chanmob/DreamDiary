@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SecondAnimTrigger : MonoBehaviour
 {
-    public Animator cat_animator; //cat 애니메이터
+    public GameObject cat;
     public GameObject bus;
     public GameObject parent;
+    public GameObject crossbus;
+
     void Start()
     {
     }
@@ -26,10 +28,12 @@ public class SecondAnimTrigger : MonoBehaviour
 
     IEnumerator CrossCat()
     {
-        cat_animator.SetBool("IsCross", true);
+        cat.GetComponent<Animator>().SetBool("IsCross", true);
         yield return new WaitForSeconds(1.3f);
-        bus.GetComponent<Animator>().SetBool("IsGone", false);
-        bus.GetComponent<BusAnimTrigger>().IsChange=true;
-        parent.SetActive(false);
+        cat.SetActive(false);
+
+        crossbus.GetComponent<Animator>().SetBool("IsGone", true);
+        yield return new WaitForSeconds(1f);
+        bus.GetComponent<BusAnimTrigger>().Changeride();
     }
 }

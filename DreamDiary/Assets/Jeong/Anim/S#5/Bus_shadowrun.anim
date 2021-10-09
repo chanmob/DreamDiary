@@ -46,7 +46,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.9833333
+        time: 4
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -81,9 +81,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 50c06dc825a36f140b31ccc314ec5b4b, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: ef5a384b9f6aa4e45b3a38aa7489fde9, type: 3}
+      value: {fileID: 21300000, guid: bcb00ffa97319eb47bb15e8a8c75e8c8, type: 3}
+    - time: 0.51666665
+      value: {fileID: 21300000, guid: bbae864e0110da54abe0c2aff55117ae, type: 3}
     - time: 0.98333335
       value: {fileID: 21300000, guid: bcb00ffa97319eb47bb15e8a8c75e8c8, type: 3}
     - time: 1
@@ -132,8 +132,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 50c06dc825a36f140b31ccc314ec5b4b, type: 3}
-    - {fileID: 21300000, guid: ef5a384b9f6aa4e45b3a38aa7489fde9, type: 3}
+    - {fileID: 21300000, guid: bcb00ffa97319eb47bb15e8a8c75e8c8, type: 3}
+    - {fileID: 21300000, guid: bbae864e0110da54abe0c2aff55117ae, type: 3}
     - {fileID: 21300000, guid: bcb00ffa97319eb47bb15e8a8c75e8c8, type: 3}
     - {fileID: 21300000, guid: bcb00ffa97319eb47bb15e8a8c75e8c8, type: 3}
     - {fileID: 21300000, guid: bbae864e0110da54abe0c2aff55117ae, type: 3}
@@ -197,7 +197,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.9833333
+        time: 4
         value: 0
         inSlope: 0
         outSlope: 0
@@ -261,7 +261,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.9833333
+        time: 4
         value: 0
         inSlope: 0
         outSlope: 0
@@ -325,7 +325,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.9833333
+        time: 4
         value: 0
         inSlope: 0
         outSlope: 0

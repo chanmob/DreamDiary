@@ -5,10 +5,19 @@ using UnityEngine;
 public class S5InGameManager : MonoBehaviour
 {
     public GameObject nullpanel;
+    public GameObject firstmap;
+    public GameObject secondmap;
 
     void Start()
     {
+        SceneObjectInit();
         StartCoroutine(ingameflow());
+       
+    }
+    void SceneObjectInit()
+    {
+        firstmap.SetActive(true);
+        secondmap.SetActive(false);
     }
 
     IEnumerator ingameflow()
@@ -16,6 +25,8 @@ public class S5InGameManager : MonoBehaviour
         nullpanel.GetComponent<FadeInOut>().fadein_func();
         yield return new WaitForSeconds(2);
     }
+
+    
 
 
     public void endpuzzle()
