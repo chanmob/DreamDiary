@@ -57,7 +57,3 @@
 <!--SCREENSHOT-->
 <h2 id="screen-shot"> 📷 스크린샷</h2>
 
-
-![images_jeongopo_post_6b570f8a-2c22-414a-aaf3-56d64e0e7026_Honeycam 2022-02-15 03-27-48](https://user-images.githubusercontent.com/52280545/187617304-834db27f-b94f-4fa2-b485-d3263b2c33ee.gif)
-
-![images_jeongopo_post_f1edc23a-1dfe-4d45-b2cd-24eb054d6c0c_Honeycam 2022-02-15 03-29-29](https://user-images.githubusercontent.com/52280545/187617391-8caec88e-b107-4e72-ad15-01539af84b37.gif)
